@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "a4f25fff-e546-4247-8fef-96e971c95b31",
+		"name": "event-store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "attendence-using-gateway-url",
+			"item": [
+				{
+					"name": "Register Employee-gateway",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"Pramod\",\n  \"lastName\": \"Gautam\",\n  \"gender\": \"male\",\n  \"mobileNo\": \"330983405\",\n  \"address\": \"Lucknow\",\n  \"title\": \"develoer\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/employee/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"employee",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Employee-swipe-In-gateway",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": \"Out\",\n  \"employee\": {\n    \"id\": 1\n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/employee/swipe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"employee",
+								"swipe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "attendance-status-gateway",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/employee/attendance-Status/1/2023-04-05",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"employee",
+								"attendance-Status",
+								"1",
+								"2023-04-05"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "attendance-status-date-gateway",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/employee/attendance-Status/2023-04-05",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"employee",
+								"attendance-Status",
+								"2023-04-05"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "attendance-findAll-swapout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/employee/findAll-swap/1/2023-04-10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"employee",
+								"findAll-swap",
+								"1",
+								"2023-04-10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "totalhours-first-swap-in-swap-out",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/employee/total-hours-first-swap-in-last-out/1/2023-04-10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"employee",
+								"total-hours-first-swap-in-last-out",
+								"1",
+								"2023-04-10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
